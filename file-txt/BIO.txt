@@ -1,70 +1,12 @@
 
-NAMA MEM : AL
-
-UMUR : 58
-
-alamat : JL.DSADSA
-
-kota      : BANDUNG
-
-NOMOR : 085376472920
-
-NAMA MEM : ALI HANAFIAH
-
-UMUR : 17
-
-jenis kelamin : LAKI-LAKI
-
-alamat : GG.HARAHAP
-
-kota      : PADANG SIIMPUAN
-
-NOMOR : 085376472920
-
-NAMA MEM : ALL
-
-UMUR : 17
-
-jenis kelamin : LAKI-LAKI
-
-alamat : AAAA
-
-kota      : AAA
-
-NOMOR : 085376472920
-
-NAMA MEM : AAA
-
-UMUR : 17
-
-jenis kelamin : LAKI-LAKI
-
-alamat : AAA
-
-kota      : AAA
-
-NOMOR : 085376472920
-
-NAMA MEM : ALI HANAFIAH
-
-UMUR : 17
-
-jenis kelamin : LAKI-LAKI
-
-alamat : KOTA PADANG
-
-kota      : PDASDSADSA
-
-NOMOR : 08376472920
-
 NAMA MEM : ALI
 
 UMUR : 17
 
 jenis kelamin : LAKI-LAKI
 
-alamat : AAAA
+alamat : JL.POOO
 
-kota      : AAAA
+kota      : BANUDNG
 
 NOMOR : 085376472920

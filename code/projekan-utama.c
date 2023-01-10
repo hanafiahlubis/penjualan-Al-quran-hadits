@@ -37,9 +37,7 @@ void info();
 void berapa_banyak();
 void berapa_banyak2();
 void pembayaran();
-// void menu();
 void exita();
-// void cetak1();
 void login1();
 // ####################################//////////////
 int harga[6] = {1500, 1250, 11000, 95000, 87000, 65000};
@@ -513,7 +511,7 @@ void mem2()
 {
     char username[32], password[32];
     bool ditemukan = false;
-    FILE *file = fopen("akun.csv", "r");
+    FILE *file = fopen("../file-txt/akun.csv", "r");
     while (fscanf(file, "%[^,],%[^\n]\n", username, password) != EOF)
     {
         if (strcmp(user, username) == 0)
@@ -1396,7 +1394,7 @@ void bil2()
     tulisan(12);
     printf("waktu");
     gotoxy(36, 12);
-    pem = fopen("pembukuwaan.txt", "a");
+    pem = fopen("../file-txt/pembukuwaan.txt", "a");
     printf("%02d:%02d\n", waktu.tm_hour, waktu.tm_min);
     gotoxy(62, 11);
     tulisan(12);
@@ -1424,7 +1422,7 @@ void bil2()
     // gotoxy(39, 32);
     // printf("Total2 = %d", total);
     // getch();
-    pem = fopen("pembukuwaan.txt", "a");
+    pem = fopen("../file-txt/pembukuwaan.txt", "a");
     for (int x = 0; x < tmp; x++)
     {
         fprintf(pem, "%d. %s,Rp %d x %s = Rp %d\n", x + 1, struk[x], y[x], z[x], strukHarga[x]);
@@ -1435,7 +1433,7 @@ void bil2()
     fclose(pem);
 
     // int www = atoi(banyak3 - banyak3);
-    strcpy(banyak3,"");
+    strcpy(banyak3, "");
 
     pembayaran();
     tmp = 0;
@@ -1498,17 +1496,16 @@ void bil()
         total += strukHarga[x];
         int oo = strukHarga[x];
         gotoxy(36, x + 13);
-        
+
         tulisan(12);
         // printf("%d. %s,Rp %d x %s = Rp %d\n", x + 1, struk[x], y[x], z[x], strukHarga[x]);
         printf("%d. %s,Rp %d x %s = Rp %d\n", x + 1, struk[x], y[x], z[x], oo);
         strukHarga[x] = 0;
-
     }
     gotoxy(39, 27);
     printf("Total          : Rp %d", total);
     Sleep(1500);
-    pem = fopen("pembukuwaan.txt", "a");
+    pem = fopen("../file-txt/pembukuwaan.txt", "a");
     fprintf(pem, "\n%02d:%02d\t", waktu.tm_hour, waktu.tm_min);
     fprintf(pem, "%s, %d %s %d\n", hari[waktu.tm_wday], waktu.tm_mday, bulan[waktu.tm_mon], 1900 + waktu.tm_year);
 
@@ -1759,7 +1756,7 @@ void panggil()
 }
 void tambah_x()
 {
-    BUKA2 = fopen("./upharga.txt", "a");
+    BUKA2 = fopen("../file-txt/upharga.txt", "a");
     bingkai_dalam(42, 28, 0, 15, 4, 32);
     int a = 0;
     background(8);
@@ -2053,7 +2050,7 @@ void tambah_harga()
 }
 void tambah_xx()
 {
-    BUKA2 = fopen("./upharga.txt", "a");
+    BUKA2 = fopen("../file-txt/upharga.txt", "a");
     bingkai_dalam(42, 28, 0, 15, 4, 32);
     int p = 0;
     background(0);
@@ -2340,7 +2337,7 @@ void tambah_harga2()
 void upstok_x()
 {
 
-    BUKA = fopen("./updatek.txt", "a");
+    BUKA = fopen("../file-txt/updatek.txt", "a");
     int x = 0, y = 0;
     bingkai_dalam(42, 28, 0, 15, 4, 32);
     gotoxy(45, 30);
@@ -2707,7 +2704,7 @@ void upstok()
 }
 void upstok_xx()
 {
-    BUKA = fopen("./updatek.txt", "a");
+    BUKA = fopen("../file-txt/updatek.txt", "a");
     int x = 0, y = 0;
     bingkai_dalam(42, 28, 0, 15, 4, 32);
     gotoxy(45, 30);
@@ -3083,7 +3080,7 @@ void cetak1()
     bingkai_dalam(4, 21, 0, 10, 4, 16);
     gotoxy(7, 23);
     // tulisan(14);
-    bisul(14,0);
+    bisul(14, 0);
     printf("LOGIN ADMIN");
     bingkai_dalam(23, 21, 15, 9, 4, 16);
     gotoxy(26, 23);
@@ -3312,7 +3309,7 @@ void info()
     cline(54, 25, 33, 3, 2);
     char ali1[1000];
     FILE *Ali;
-    Ali = fopen("info.txt", "r");
+    Ali = fopen("../file-txt/info.txt", "r");
     int a = 0;
     while (fgets(ali1, 225, Ali))
     {
@@ -3325,8 +3322,8 @@ void info()
     fclose(Ali);
     gotoxy(26, 38);
     printf("~~~~~~~~~~~~~~~~~~~Tekan apah saja untuk kembali ~~~~~~~~~~~~~~~~~~~");
-    getch();
-    cetak1();
+    char pilih = getche();
+    (pilih == 27) ? cetak1() : info();
 }
 void cetak(char *str)
 {

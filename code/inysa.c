@@ -5,14 +5,13 @@
 #include <stdlib.h>
 #define handle GetStdHandle(STD_OUTPUT_HANDLE)
 #define outputHandle GetStdHandle(STD_OUTPUT_HANDLE)
+
 void tulisan(int color);
-// void gambar();
 void bisul(int text, int background);
 void background(int color);
 void gotoxy(int x, int y);
 void bingkai_dalam(int x, int y, int tbisul, int bbisul, int panjang, int lebar);
 void warning();
-// int hapusl(int x,int y);
 int kanan_kiri();
 int bawah_atas();
 void persegi_panjang(int p, int l, int x, int y, int c);
@@ -21,18 +20,19 @@ void binkai();
 void asterik();
 void cline(int p, int l, int x, int y, int c);
 void login2();
+
 ////////////////// warna dan gotoxy/////////////////
 void cline(int p, int l, int x, int y, int c)
 {
-  tulisan(c);
-   for (int a = 0; a < l; a++)
-   {
-      for (int b = 0; b < p; b++)
-      {
-         gotoxy(x + b, y + a);
-         printf("%c", 219);
-      }
-   }
+    tulisan(c);
+    for (int a = 0; a < l; a++)
+    {
+        for (int b = 0; b < p; b++)
+        {
+            gotoxy(x + b, y + a);
+            printf("%c", 219);
+        }
+    }
 }
 // enum warna
 // {
@@ -58,7 +58,6 @@ void bisul(int text, int background)
     SetConsoleTextAttribute(handle, background * 16 + text);
 }
 
-
 #define outputHandle GetStdHandle(STD_OUTPUT_HANDLE)
 
 #define BLACK 0
@@ -81,19 +80,28 @@ void bisul(int text, int background)
 int text_color = FOREGROUND_INTENSITY;
 int background_color = 0;
 
-
-
-void daftar(){
-background(0);tulisan(15);
-gotoxy(21,3);printf("********       ********      ******    *********    *********    **********     \n");
-gotoxy(21,4);printf("*********     ***     ***   ********  ***********  ***     ***  ****    ****    \n");
-gotoxy(21,5);printf("**     ***    ***     ***  ***            ***      ***     ***  ***      ***    \n");
-gotoxy(21,6);printf("**      ***   ***     ***  ***            ***      ***     ***  ****    ****    \n");
-gotoxy(21,7);printf("**       ***  ***********  ********       ***      ***********  ************    \n");
-gotoxy(21,8);printf("**      ***   ***********  *******        ***      ***********  ***      ***    \n");
-gotoxy(21,9);printf("**     ***    ***     ***  ***            ***      ***     ***  ***       ***   \n");
-gotoxy(21,10);printf("*********     ***     ***  **             ***      ***     ***  ***        ***  \n");
-gotoxy(21,11);printf("********      **       **  **             ***      ***     ***  ***         *** \n");
+void daftar()
+{
+    background(0);
+    tulisan(15);
+    gotoxy(21, 3);
+    printf("********       ********      ******    *********    *********    **********     \n");
+    gotoxy(21, 4);
+    printf("*********     ***     ***   ********  ***********  ***     ***  ****    ****    \n");
+    gotoxy(21, 5);
+    printf("**     ***    ***     ***  ***            ***      ***     ***  ***      ***    \n");
+    gotoxy(21, 6);
+    printf("**      ***   ***     ***  ***            ***      ***     ***  ****    ****    \n");
+    gotoxy(21, 7);
+    printf("**       ***  ***********  ********       ***      ***********  ************    \n");
+    gotoxy(21, 8);
+    printf("**      ***   ***********  *******        ***      ***********  ***      ***    \n");
+    gotoxy(21, 9);
+    printf("**     ***    ***     ***  ***            ***      ***     ***  ***       ***   \n");
+    gotoxy(21, 10);
+    printf("*********     ***     ***  **             ***      ***     ***  ***        ***  \n");
+    gotoxy(21, 11);
+    printf("********      **       **  **             ***      ***     ***  ***         *** \n");
 }
 
 void gotoxy(int x, int y)
@@ -114,14 +122,22 @@ void background(int color)
     background_color = color;
 }
 
-void login2(){    
-background(0);tulisan(14);
-gotoxy(32,2);printf("***        ***********  *********  ***  *****     ***");
-gotoxy(32,3);printf("***        ***********  ***    **  ***  *** **    ***");
-gotoxy(32,4);printf("***        ***     ***  ***        ***  ***  **   ***");
-gotoxy(32,5);printf("***        ***     ***  ***  ****  ***  ***   **  ***");
-gotoxy(32,6);printf("*********  ***********  ***    **  ***  ***    ** ***");
-gotoxy(32,7);printf("*********  ***********  *********  ***  ***     *****");
+void login2()
+{
+    background(0);
+    tulisan(14);
+    gotoxy(32, 2);
+    printf("***        ***********  *********  ***  *****     ***");
+    gotoxy(32, 3);
+    printf("***        ***********  ***    **  ***  *** **    ***");
+    gotoxy(32, 4);
+    printf("***        ***     ***  ***        ***  ***  **   ***");
+    gotoxy(32, 5);
+    printf("***        ***     ***  ***  ****  ***  ***   **  ***");
+    gotoxy(32, 6);
+    printf("*********  ***********  ***    **  ***  ***    ** ***");
+    gotoxy(32, 7);
+    printf("*********  ***********  *********  ***  ***     *****");
 }
 
 void bingkai_dalam(int x, int y, int tbisul, int bbisul, int panjang, int lebar)
@@ -333,69 +349,90 @@ void asterik()
 
     for (int a = 1; a <= 15; a++)
     {
-       tulisan(0+a);
+        tulisan(0 + a);
         gotoxy(6, 1);
-        printf("*****************************");tulisan(0+a);
+        printf("*****************************");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 2);
-        printf("***            ***   *      *");tulisan(0+a);
+        printf("***            ***   *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 3);
-        printf("***   *******  ***   *      *");tulisan(0+a);
+        printf("***   *******  ***   *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 4);
-        printf("***   *     *  ***   *      *");tulisan(0+a);
+        printf("***   *     *  ***   *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 5);
-        printf("***   *******  ***   *      *");tulisan(0+a);
+        printf("***   *******  ***   *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 6);
-        printf("***            ***   *      *                                             *");tulisan(0+a);
+        printf("***            ***   *      *                                             *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 7);
-        printf("***      *     ***   *      *                                           *  *");tulisan(0+a);
+        printf("***      *     ***   *      *                                           *  *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 8);
-        printf("***    *   *   ***   ********                                          *   *");tulisan(0+a);
+        printf("***    *   *   ***   ********                                          *   *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 9);
-        printf("***  *       * ***          *                                         *    *");tulisan(0+a);
+        printf("***  *       * ***          *                                         *    *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(6, 10);
-        printf("*****          **************                                       *******");tulisan(0+a);
+        printf("*****          **************                                       *******");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 11);
-        printf("           ********************     /****/******************************");tulisan(0+a);
+        printf("           ********************     /****/******************************");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 12);
-        printf("           |      *   |   *    *   /    /          *            *      *");tulisan(0+a);
+        printf("           |      *   |   *    *   /    /          *            *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 13);
-        printf("           |    /   * |    *    * /    /     ***   *     ===    *      *");tulisan(0+a);
+        printf("           |    /   * |    *    * /    /     ***   *     ===    *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 14);
-        printf("           |   *     *|     *    *    /      ***   *     ===    *      *");tulisan(0+a);
+        printf("           |   *     *|     *    *    /      ***   *     ===    *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 15);
-        printf("           *    *     *      *       /             *            *      *");tulisan(0+a);
+        printf("           *    *     *      *       /             *            *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 16);
-        printf("             *   *    *      /      /              *     *  *   *      *");tulisan(0+a);
+        printf("             *   *    *      /      /              *     *  *   *      *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 17);
-        printf("               *  *         /      /           *   *    *    *   *     *");tulisan(0+a);
+        printf("               *  *         /      /           *   *    *    *   *     *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 18);
-        printf("           *****   *       /      /          *  *  *   *      *   *    *");tulisan(0+a);
+        printf("           *****   *       /      /          *  *  *   *      *   *    *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 19);
-        printf("           |        *     /      /         *     * *  *        *   *   *");tulisan(0+a);
+        printf("           |        *     /      /         *     * *  *        *   *   *");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(10, 20);
-        printf("           |_________*___/______/*********        ****          ********");tulisan(0+a);
+        printf("           |_________*___/______/*********        ****          ********");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(36, 21);
-        printf("                                 ************************  *****");tulisan(0+a);
+        printf("                                 ************************  *****");
+        tulisan(0 + a);
         Sleep(5);
         gotoxy(36, 22);
         printf("                                 *                *     *  *   *");

@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <string.h>
 #include <stdlib.h>
-#include<stdbool.h>
+#include <stdbool.h>
 struct daftar
 {
     int tampungan;
@@ -34,7 +34,7 @@ int val_umur(char[]);
 void isi_id();
 char akses_user[100];
 void alamat();
-// void isiAlamat();
+void cetak1();
 void daftar_();
 int val_nom(char a[]);
 int valHur(char a[]);
@@ -268,12 +268,12 @@ void logpass()
 }
 void login()
 {
-    Ali = fopen("adminpas.txt", "r");
+    Ali = fopen("../file-txt/adminpas.txt", "r");
     fscanf(Ali, "%s", akses_pas); // untuk menambung yang ada di dalam si notpet
     fclose(Ali);
-    data = fopen("adminid.txt", "r"); // untuk membuka file
-    fscanf(data, "%s", &akses_user);  // untuk menambung yang ada di dalam si notpet
-    fclose(data);                     // untuk menutup file
+    data = fopen("../file-txt/adminid.txt", "r");                          // untuk membuka file
+    fscanf(data, "%s", &akses_user);                                       // untuk menambung yang ada di dalam si notpet
+    fclose(data);                                                          // untuk menutup file
     if ((strcmp(user, akses_user) == 0) && (strcmp(pass, akses_pas) == 0)) // untuk di banding kan
     {
         int b;
@@ -447,7 +447,7 @@ void isiNama()
     }
     if (valnama(bis.nama) == 0 && strlen(bis.nama) <= 31 && strlen(bis.nama) != 0)
     {
-        bio = fopen("BIO.txt", "a");
+        bio = fopen("../file-txt/bio.txt", "a");
         fprintf(bio, "\nNAMA MEM : %s\n", bis.nama);
         fclose(bio);
         umur1();
@@ -561,7 +561,7 @@ void umur1()
             }
             else
             {
-                bio = fopen("BIO.txt", "a");
+                bio = fopen("../file-txt/bio.txt", "a");
                 fprintf(bio, "\nUMUR : %d\n", bis.tampungan);
                 fclose(bio);
                 ulang = 0;
@@ -598,7 +598,7 @@ void jk1()
         strcpy(tampungan, jk[0]);
         gotoxy(33, 19);
         printf("%s", tampungan);
-        bio = fopen("BIO.txt", "a");
+        bio = fopen("../file-txt/bio.txt", "a");
         fprintf(bio, "\njenis kelamin : %s\n", tampungan);
         fclose(bio);
         alamat();
@@ -673,7 +673,7 @@ void alamat()
     }
     if (valAl(bis.alamat1) == 0 && strlen(bis.alamat1) <= 20 && strlen(bis.alamat1) != 0)
     {
-        bio = fopen("BIO.txt", "a");
+        bio = fopen("../file-txt/bio.txt", "a");
         fprintf(bio, "\nalamat : %s\n", bis.alamat1);
         fclose(bio);
         kota();
@@ -763,7 +763,7 @@ void kota()
     if (valHur(bis.kota1) == 0 && strlen(bis.kota1) <= 22 && strlen(bis.kota1) != 0)
     {
 
-        bio = fopen("BIO.txt", "a");
+        bio = fopen("../file-txt/bio.txt", "a");
         fprintf(bio, "\nkota      : %s\n", bis.kota1);
         fclose(bio);
         isinomor();
@@ -850,7 +850,7 @@ void isinomor()
     if (val_nom(bis.nomor) == 0 && strlen(bis.nomor) >= 11 && strlen(bis.nomor) <= 13 && strlen(bis.nomor) != 0)
     {
 
-        bio = fopen("BIO.txt", "a");
+        bio = fopen("../file-txt/bio.txt", "a");
         fprintf(bio, "\nNOMOR : %s\n", bis.nomor);
         fclose(bio);
         isi_id();
@@ -893,7 +893,7 @@ void isinomor()
 
 void isi_id()
 {
-    BAIK = fopen("akun.csv", "r");
+    BAIK = fopen("../file-txt/akun.csv", "r");
     int p = 0;
     while (fscanf(BAIK, "%s", &bis.tamp[p]) != EOF)
     {
@@ -989,7 +989,6 @@ void isi_id()
         if (!sudah_ada)
         {
         }
-        // hahahahah///
         else
         {
             gotoxy(33, 22);
@@ -1001,9 +1000,9 @@ void isi_id()
             printf("                           ");
             isi_id();
         }
-        buruk = fopen("akun.csv", "a");
+        buruk = fopen("../file-txt/akun.csv", "a");
         fprintf(buruk, "%s,", bis.idd);
-        printf("%s",bis.idd);
+        // printf("%s", bis.idd);
         fclose(buruk);
         pas();
     }
@@ -1092,7 +1091,7 @@ void pas()
     }
     else
     {
-        SUKA = fopen("akun.csv", "a");
+        SUKA = fopen("../file-txt/akun.csv", "a");
         fprintf(SUKA, "%s\n", bis.sandi);
         fclose(SUKA);
         seni();
@@ -1181,7 +1180,7 @@ int valHur(char a[])
     return j;
 }
 
-int valnama(char a[])//ALI HANFIAH
+int valnama(char a[]) // ALI HANFIAH
 {
     int i = 0, j = 0;
     if (a[0] == ' ' || a[strlen(a) - 1] == ' ' || a[0] == '-' || a[strlen(a) - 1] == '-')
@@ -1191,7 +1190,7 @@ int valnama(char a[])//ALI HANFIAH
     }
     for (int x = 0; x < strlen(a); x++)
     {
-        if (!(a[x] >= 'A' && a[x] <= 'Z' || a[x] == ' ' && a[x + 1] != ' ' || a[x] == '\'' && a[x + 1] != '\''|| a[x] == '-' && a[x + 1]!='-'))
+        if (!(a[x] >= 'A' && a[x] <= 'Z' || a[x] == ' ' && a[x + 1] != ' ' || a[x] == '\'' && a[x + 1] != '\'' || a[x] == '-' && a[x + 1] != '-'))
         {
             j++;
         }
