@@ -3321,13 +3321,13 @@ void info()
     }
     fclose(Ali);
     gotoxy(26, 38);
-    printf("~~~~~~~~~~~~~~~~~~~Tekan apah saja untuk kembali ~~~~~~~~~~~~~~~~~~~");
-    char pilih = getche();
+    printf("~~~~~~~~~~~~~~~~~~~ Tekan ESC saja untuk kembali ~~~~~~~~~~~~~~~~~~~");
+    char pilih = getch();
     (pilih == 27) ? cetak1() : info();
 }
 void cetak(char *str)
 {
-    for (int i = 0; str[i] != NULL; i++)
+    for (int i = 0; str[i] != '\0'; i++)
     {
         if (str[i] == '*')
         {

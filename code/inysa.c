@@ -324,7 +324,7 @@ void binkai()
         {
             if (x == 0 || y == 0 || x == 120 || y == 40)
             {
-                tulisan(12);
+                tulisan(15);
                 gotoxy(0, y);
                 printf("%c", 219);
                 gotoxy(x, 0);
