@@ -6,13 +6,13 @@
 #define handle GetStdHandle(STD_OUTPUT_HANDLE)
 #define outputHandle GetStdHandle(STD_OUTPUT_HANDLE)
 void tulisan(int color);
-void gambar();
+// void gambar();
 void bisul(int text, int background);
 void background(int color);
 void gotoxy(int x, int y);
 void bingkai_dalam(int x, int y, int tbisul, int bbisul, int panjang, int lebar);
 void warning();
-int hapusl(int x,int y);
+// int hapusl(int x,int y);
 int kanan_kiri();
 int bawah_atas();
 void persegi_panjang(int p, int l, int x, int y, int c);
@@ -49,7 +49,7 @@ void cline(int p, int l, int x, int y, int c)
 //     GREEN,       // hijau.10
 //     CYAN,        // aqua.11
 //     RED,         // merah.12
-//     PURgotoxyE,      // ungu.13
+//     PURE,      // ungu.13
 //     YELLOW,      // kuning.14
 //     WHITE        // putih.15
 // };
@@ -69,7 +69,6 @@ void bisul(int text, int background)
 #define DARK_PURPLE 5
 #define DARK_YELLOW 6
 #define DARK_WHITE 7
-
 #define GRAY 8
 #define BLUE 9
 #define GREEN 10

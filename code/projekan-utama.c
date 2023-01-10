@@ -1,4 +1,4 @@
-#include "DAFTAR_AKUN.c"
+#include "daftar-akun.c"
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
@@ -3082,7 +3082,8 @@ void cetak1()
     tulisan(14);
     bingkai_dalam(4, 21, 0, 10, 4, 16);
     gotoxy(7, 23);
-    tulisan(14);
+    // tulisan(14);
+    bisul(14,0);
     printf("LOGIN ADMIN");
     bingkai_dalam(23, 21, 15, 9, 4, 16);
     gotoxy(26, 23);

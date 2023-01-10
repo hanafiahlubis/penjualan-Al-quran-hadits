@@ -118,6 +118,7 @@ void loguser()
                 a = 0;
             }
             gotoxy(57 + a, 19);
+            background(8);
             printf(" ");
         }
         else if (user[0] == 27)
@@ -133,9 +134,11 @@ void loguser()
         {
             a = 8;
             gotoxy(65, 19);
+            background(8);
             printf(" ");
         }
         gotoxy(57 + a, 19);
+        background(0);
         user[a] = getch();
     }
     user[a] = 00;
@@ -196,6 +199,7 @@ void logpass()
                 a = 0;
             }
             gotoxy(57 + a, 23);
+            background(8);
             printf(" ");
         }
         else if (pass[0] == 27)
@@ -212,9 +216,11 @@ void logpass()
         {
             a = 8;
             gotoxy(65, 23);
+            background(8);
             printf(" ");
         }
         gotoxy(57 + a, 23);
+        background(0);
         pass[a] = getch();
     }
     pass[a] = 00;
